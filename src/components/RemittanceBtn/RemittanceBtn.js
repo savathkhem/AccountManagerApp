@@ -25,6 +25,9 @@ const styles = theme => ({
     boxShadow: theme.shadows[5],
     padding: 0,
   },
+  button: {
+    backgroundColor: 'purple',
+  }
 });
 
 class ModalBtn extends React.Component {

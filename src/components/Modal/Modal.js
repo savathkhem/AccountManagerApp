@@ -93,17 +93,21 @@ class ModalBtn extends React.Component {
                   Account:  {data.Payee.Name}
               </Typography>
               <Typography variant="subheading">
+                  Attention To: {data.Payee.Attention}
+              </Typography>
+              <Typography variant="body">
                   Phone:  {data.Payee.Phone}
               </Typography>
-              <Typography variant="subheading">
+              <Typography variant="body">
                   Fax:  {data.Payee.Fax}
               </Typography>
+
               <Divider />
               <Typography variant="title" style={{marginTop: 10,}}>
                   Address
               </Typography>
               <Typography variant="subheading">
-                  {data.Payee.Address.Address1}
+              {data.Payee.Address.Address1}
               </Typography>
               <Typography variant="subheading">
               {data.Payee.Address.Address2}
@@ -114,12 +118,15 @@ class ModalBtn extends React.Component {
               <Typography variant="subheading">
                   Country:  {data.Payee.Address.Country}
               </Typography>
-            </div>
               <Divider />
+
               {/* Pass In Data From JSON */}
-             <RemittanceBtn 
-               remit={remit}
-             />
+              <div style={{marginTop: 10, marginBottom: 10}}>
+             <RemittanceBtn remit={remit}/> 
+             </div>
+             
+             Last Submission Date: {data.Payee.SubmissionDate}
+               </div>
             </Paper>
           </Grid>
 
