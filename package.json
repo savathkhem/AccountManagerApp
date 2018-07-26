@@ -2,11 +2,13 @@
   "name": "mern",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://savathkhem.github.io/AccountManagerApp/",
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "@material-ui/core": "^1.2.3",
     "@material-ui/icons": "^1.1.0",
     "axios": "^0.16.2",
+    "gh-pages": "^1.2.0",
     "material-ui": "^0.20.1",
     "nodemon": "^1.17.5",
     "react": "^16.4.1",
@@ -15,6 +17,8 @@
     "react-scripts": "1.0.14"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
