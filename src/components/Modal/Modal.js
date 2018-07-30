@@ -68,7 +68,7 @@ class ModalBtn extends React.Component {
         {/* List Icon Render Here */}
         <ListItem button onClick={this.handleOpen}>
           <ListItemIcon>
-          <AccountCircle />
+            <AccountCircle />
           </ListItemIcon>
               <Typography>
                   {data.Payee.Name}
@@ -124,7 +124,6 @@ class ModalBtn extends React.Component {
               <div style={{marginTop: 10, marginBottom: 10}}>
              <RemittanceBtn remit={remit}/> 
              </div>
-             
              Last Submission Date: {data.Payee.SubmissionDate}
                </div>
             </Paper>

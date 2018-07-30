@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Paper, Button } from '@material-ui/core/';
@@ -21,7 +21,7 @@ const styles = theme => ({
     position: 'absolute',
     width: '60vw',
     height: '70vh',
-    backgroundColor: theme.palette.background.paper,
+    // backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: 0,
   },
@@ -30,7 +30,7 @@ const styles = theme => ({
   }
 });
 
-class ModalBtn extends React.Component {
+class RemittanceBtn extends React.Component {
   state = {
     open: false,
   };
@@ -70,15 +70,10 @@ class ModalBtn extends React.Component {
           onClose={this.handleClose}
         >
         <Paper style={getModalStyle()} className={classes.paper}>
-          <Fragment>
-
-
             {/* Pass in JSON Data */}
             <Tabs 
               data={data}
             />
-
-          </Fragment>
         </Paper>
         </Modal>
 
@@ -87,11 +82,11 @@ class ModalBtn extends React.Component {
   }
 }
 
-ModalBtn.propTypes = {
+RemittanceBtn.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
 // We need an intermediary variable for handling the recursive nesting.
-const ModalBtnWrapped = withStyles(styles)(ModalBtn);
+const RemittanceBtnWrapped = withStyles(styles)(RemittanceBtn);
 
-export default ModalBtnWrapped;
+export default RemittanceBtnWrapped;

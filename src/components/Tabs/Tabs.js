@@ -27,14 +27,14 @@ const styles = theme => ({
   },
 });
 
-class ScrollableTabsButtonAuto extends React.Component {
+class ScrollableTabs extends React.Component {
   state = {
     value: 0,
   };
   
 
-  handleChange = (value) => {
-    console.log(value)
+  handleChange = (event, value) => {
+    // console.log(value)
     this.setState({ value });
   };
 
@@ -45,7 +45,7 @@ class ScrollableTabsButtonAuto extends React.Component {
     const json = JSON.stringify(this.props.data);
     const data = JSON.parse(json);
 
-    console.log(data[0]) 
+    // console.log(data[0]) 
 
     return (
       <div className={classes.root}>
@@ -60,31 +60,29 @@ class ScrollableTabsButtonAuto extends React.Component {
           >
             {/* .map function */}
             {data.map((res, index) => (
-            <div>
                 <Tab label={"Remittance "+ index}/>
-            </div>
             ))}
         </Tabs>
         </AppBar>
 
         {/* .map function */}
-        {data.map((res, i) => (
+        {data.map((res, index) => (
         <div>
-            {value === i && <TabContainer>
-                <Typography variant="Headline">
-                    Payor Name:    {data[i].PayorName}
+            {value === index && <TabContainer>
+                <Typography variant="headline">
+                    Payor Name:    {data[index].PayorName}
                 </Typography>
                 <Typography variant="subheading">
-                    Payor Id:    {data[i].PayorId}
+                    Payor Id:    {data[index].PayorId}
                 </Typography>
                 <Typography variant="subheading">
-                    InvoiceNo:    {data[i].InvoiceNo}
-                <Typography variant="subheading">
-                    Amount:    {data[i].Amount}
+                    InvoiceNo:    {data[index].InvoiceNo}
                 </Typography>
+                <Typography variant="subheading">
+                    Amount:    {data[index].Amount}
                 </Typography>
                 <Typography variant="body">
-                    Description:    {data[i].Description}
+                    Description:    {data[index].Description}
                 </Typography>
             </TabContainer>}
         </div>
@@ -94,8 +92,8 @@ class ScrollableTabsButtonAuto extends React.Component {
   }
 }
 
-ScrollableTabsButtonAuto.propTypes = {
+ScrollableTabs.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ScrollableTabsButtonAuto);
+export default withStyles(styles)(ScrollableTabs);
