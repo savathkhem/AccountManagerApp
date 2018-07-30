@@ -23,6 +23,10 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
+    '@media screen and (max-width: 500px)': {
+      width: '95vw',
+      height: '20%',
+    }
   },
   button: {
     backgroundColor: 'purple',

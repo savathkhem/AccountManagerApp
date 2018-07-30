@@ -29,6 +29,10 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: 0,
+    '@media screen and (max-width: 500px)': {
+      width: '100vw',
+      height: '60%',
+    }
   },
   cardPaper: {
     padding: theme.spacing.unit * 2,
