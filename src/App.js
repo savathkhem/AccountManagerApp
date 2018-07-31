@@ -17,6 +17,23 @@ class App extends Component {
   };
 
   render() {
+    
+    //Sorts Names In Alphetical Order
+    this.state.data
+      .sort(function(a, b){
+      var nameA = a.Payee.Name.toLowerCase();
+      var nameB = b.Payee.Name.toLowerCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      // names must be equal
+      return 0;
+      })
+
+    // console.log(sortData)
 
     return (
       <Fragment>
